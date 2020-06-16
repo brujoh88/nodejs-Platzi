@@ -4,7 +4,8 @@ const success = (req, res, message, status) => {
     body: message,
   })
 }
-const error = (req, res, message, status) => {
+const error = (req, res, message, status, details) => {
+  console.error(`[RES ERROR] - ${details}`)
   res.status(status || 500).send({
     error: message,
     body: '',
