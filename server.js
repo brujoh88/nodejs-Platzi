@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   if (req.query.error == 'ok') {
-    response.error(req, res, 'Ups fallo', 400)
+    response.error(req, res, 'Ups fallo', 400, 'Peticion incorrecta')
   } else {
     response.success(req, res, 'Mensaje Creado', 201)
   }
