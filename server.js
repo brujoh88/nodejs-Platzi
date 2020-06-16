@@ -10,13 +10,14 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors())
 app.use(router)
+app.use('/app', express.static('public'))
 const port = 3000
 
 router.get('/', (req, res) => {
   res.header({
     'header-server': 'Genial',
   })
-  console.log(req.headers) //para ver el header de la peticion
+  //console.log(req.headers) //para ver el header de la peticion
   response.success(req, res, 'Mensaje personalizado', 200)
 })
 
