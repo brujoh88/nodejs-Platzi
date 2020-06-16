@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- Esto corre en http://localhost:5500 -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Genial Has tu peticion</h1>
+    <button id="btn">Click me!</button>
+
+    <script>
+      const uri = "http://localhost:3000"
+      const peticion = () => {
+        fetch(uri, {
+          headers: {
+            "header-client": "muy bueno",
+          },
+        })
+          .then((res) => res.text())
+          .then((res) => {
+            let saludo = res + " Gustavo"
+            console.log(saludo)
+          })
+      }
+      const btn = document.getElementById("btn")
+      btn.addEventListener("click", () => {
+        peticion()
+      })
+    </script>
+  </body>
+</html>
