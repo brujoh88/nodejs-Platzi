@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const response = require('../../network/response')
-
+const controller = require('./controller')
 router.get('/', (req, res) => {
   res.header({
     'header-server': 'Genial',
@@ -11,11 +11,14 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  if (req.query.error == 'ok') {
-    response.error(req, res, 'Ups fallo', 400, 'Peticion incorrecta')
-  } else {
-    response.success(req, res, 'Mensaje Creado', 201)
-  }
+  controller
+    .addMessage(req.body.user, req.body.message)
+    .then((msg) => {
+      response.success(req, res, msg, 201)
+    })
+    .catch(() => {
+      response.error(req, res, 'Ups fallo', 400, 'Peticion incorrecta')
+    })
 })
 
 module.exports = router
