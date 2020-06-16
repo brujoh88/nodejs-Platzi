@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/brujoh88/nodejs-Platzi/issues"
   },
-  "homepage": "https://github.com/brujoh88/nodejs-Platzi#readme"
+  "homepage": "https://github.com/brujoh88/nodejs-Platzi#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
