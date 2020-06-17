@@ -14,12 +14,12 @@ const addMessage = (user, message) => {
     resolve(fullMessage)
   })
 }
-const getMesseges = () => {
+const getAllMesseges = () => {
   return new Promise((resolve, reject) => {
     resolve(store.getAllMessage())
   })
 }
 module.exports = {
   addMessage,
-  getMesseges,
+  getAllMesseges,
 }

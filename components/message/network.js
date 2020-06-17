@@ -8,7 +8,9 @@ router.get('/', (req, res) => {
   })
   //console.log(req.headers) //para ver el header de la peticion
   //response.success(req, res, 'Mensaje personalizado', 200)
-  controller.getMesseges().then((list) => response.success(req, res, list, 200))
+  controller
+    .getAllMesseges()
+    .then((list) => response.success(req, res, list, 200))
 })
 
 router.post('/', (req, res) => {
