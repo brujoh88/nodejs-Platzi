@@ -15,6 +15,7 @@ app.use('/app', express.static('public'))
 const port = 3000
 
 router(app)
+
 app.listen(port, () =>
   console.log(`Esta aplicacion esta escuchando! http://localhost:${port}`)
 )
