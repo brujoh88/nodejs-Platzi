@@ -2,7 +2,7 @@
 
 //===========MOOC
 
-const list = []
+/* const list = []
 
 const addMessage = (msg) => {
   list.push(msg)
@@ -15,5 +15,6 @@ const getAllMessage = () => {
 module.exports = {
   add: addMessage, //la llamo add
   getAllMessage,
-}
+} */
 //==========FIN=MOOC
+const db = require("mongoose")
